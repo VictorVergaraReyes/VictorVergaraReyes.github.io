@@ -3,7 +3,7 @@
         <div id="banner" class="bg">
             BANNER
         </div>
-        <div id="projects">
+        <div id="projects" class="dark:text-sky-400">
             projects
         </div>
         <div>
