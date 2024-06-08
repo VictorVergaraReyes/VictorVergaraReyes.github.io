@@ -4,7 +4,15 @@ export default defineNuxtConfig({
   app: {
     head: {
       charset: 'utf-8',
+      title:"vic vr dev",
       viewport: 'width=device-width, initial-scale=1',
+      link: [
+        {
+          rel: "icon",
+          type: "image/svg+xml", // SVG specific type
+          href: "favicon.svg"
+        }
+      ]
     }
   },
   postcss: {
@@ -14,5 +22,4 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  
 })
