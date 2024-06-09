@@ -12,7 +12,8 @@
   "dependencies": {
     "nuxt": "^3.10.2",
     "vue": "^3.4.19",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vue3-pdf-app": "^1.0.3"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.11.4",
