@@ -121,7 +121,18 @@
                 <!-- <PdfViewer pdf="https://file-examples-com.github.io/uploads/2017/10/file-example_PDF_1MB.pdf" /> -->
                 <!-- <PdfApp style="height: 90vh" pdf="../assets/cv/FrontEnd_VictorVergara.pdf"></PdfApp> -->
                 <!-- <Vue-pdf-app /> -->
-                 <embed src="../FrontEnd_VictorVergara.pdf" width="500px" height="375px"  type="application/pdf">
+                <!-- <NuxtLink to="/resume">
+                    <button>See my resume</button>
+                </NuxtLink> -->
+                <button
+                class="select-none rounded-lg bg-cyan-600 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button"
+                data-ripple-light="true"
+                @click="handleNavigation()"
+                >
+                See my resume
+                </button>
+
                 
             </div>
             <div class="relative flex rounded-xl">
@@ -133,3 +144,13 @@
         </section>
     </div>
 </template>
+
+<script setup>
+// import { NuxtLink } from '@nuxt/router-tools';
+import { useRoute, useRouter } from "vue-router";
+const router = useRouter();
+
+function handleNavigation() {
+    router.push('/resume');
+  }
+</script>
