@@ -1,2 +1,0 @@
-# VictorVergaraReyes.github.io
-Portafolio
