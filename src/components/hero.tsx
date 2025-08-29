@@ -1,4 +1,35 @@
 import { ArrowRight, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+type LetterByLetterTypingProps = {
+  text: string;
+  delay?: number;
+};
+
+const LetterByLetterTyping = ({ text, delay = 0 }: LetterByLetterTypingProps) => {
+    const letters = text.split('');
+    
+    return (
+      <div className="inline-block">
+        {letters.map((letter: string, index: number) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: delay + index * 0.1,
+              repeat: Infinity,
+              repeatType: "reverse",
+              repeatDelay: 2
+            }}
+            className="inline-block"
+          >
+            {letter === ' ' ? '\u00A0' : letter}
+          </motion.span>
+        ))}
+      </div>
+    );
+  };
 
 const HeroSection = () => {
   return (
@@ -20,7 +51,8 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Title */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 tracking-tight">
-          <span className="block">Ethan Carter</span>
+          {/* <span className="block">Victor Vergara</span> */}
+          <LetterByLetterTyping text="Victor Vergara" delay={0.3} />
         </h1>
 
         {/* Subtitle */}

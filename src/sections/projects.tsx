@@ -1,48 +1,30 @@
-import { ExternalLink, Monitor, Smartphone, BarChart3, DollarSign } from 'lucide-react';
+import { ExternalLink, Monitor, Smartphone, DollarSign } from 'lucide-react';
 import { useState } from 'react';
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'Web Development', 'Mobile Apps', 'Data Science'];
+  const filters = ['All', 'Web Development', 'Mobile Apps'];
 
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform with user authentication, product management, and payment integration.",
-      category: "Web Development",
-      image: "ecommerce",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "Glow app",
+      description: "A managment mobile app for schedule in beauty salons",
+      category: "Mobile Apps",
+      image: "Smartphone",
+      technologies: ["React Native", "Supabase", "Stripe"],
       gradient: "from-orange-200 to-pink-200"
     },
     {
       id: 2,
-      title: "Social Media App",
-      description: "A social media application with user profiles, posts, and real-time updates.",
-      category: "Mobile Apps", 
+      title: "Barrel Sauna Website",
+      description: "A responsive website for a barrel sauna business, featuring product showcases, booking system, and customer testimonials.",
+      category: "Web Development", 
       image: "social",
-      technologies: ["React Native", "Firebase", "Redux"],
+      technologies: ["Astro"],
       gradient: "from-blue-200 to-cyan-200"
     },
-    {
-      id: 3,
-      title: "Analytics Dashboard",
-      description: "A dashboard for analyzing large datasets and visualizing key metrics.",
-      category: "Data Science",
-      image: "analytics",
-      technologies: ["Python", "Django", "PostgreSQL", "D3.js"],
-      gradient: "from-green-200 to-teal-200"
-    },
-    {
-      id: 4,
-      title: "Finance Tracker",
-      description: "A personal finance tracker for managing budgets, expenses, and investments.",
-      category: "Web Development", 
-      image: "finance",
-      technologies: ["Vue.js", "Express", "MySQL"],
-      gradient: "from-purple-200 to-pink-200"
-    }
   ];
 
   const filteredProjects = activeFilter === 'All' 
@@ -52,8 +34,7 @@ const ProjectsSection = () => {
   const getProjectIcon = (category:any) => {
     switch(category) {
       case 'Web Development': return <Monitor className="w-16 h-16 text-gray-400" />;
-      case 'Mobile Apps': return <Smartphone className="w-16 h-16 text-gray-400" />;
-      case 'Data Science': return <BarChart3 className="w-16 h-16 text-gray-400" />;
+      case 'Mobile Apps': return <Smartphone className="w-16 h-16 text-gray-400" />;      
       default: return <DollarSign className="w-16 h-16 text-gray-400" />;
     }
   };
@@ -69,7 +50,8 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        {/* Filters */}
+        
+            
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           {filters.map((filter) => (
             <button
