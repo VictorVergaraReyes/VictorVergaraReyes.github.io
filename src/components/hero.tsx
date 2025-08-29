@@ -33,7 +33,8 @@ const LetterByLetterTyping = ({ text, delay = 0 }: LetterByLetterTypingProps) =>
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden min-w-full bg-gray-900">
+
+<section id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden min-w-full bg-gray-900">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#1a2332] to-[#273677]">
         {/* Animated gradient overlay for more depth */}

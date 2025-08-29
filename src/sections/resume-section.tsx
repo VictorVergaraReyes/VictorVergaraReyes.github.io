@@ -1,53 +1,48 @@
-import { Code, Database, HardDrive, Cloud, GitBranch, Briefcase, User } from 'lucide-react';
+import { Code, Database, HardDrive, GitBranch, Briefcase, User } from 'lucide-react';
 
 const ResumeSection = () => {
   const skills = [
     {
       icon: <Code className="w-8 h-8 text-[#273677]" />,
       title: "Front-end",
-      technologies: "React, Angular, HTML, CSS, JavaScript"
+      technologies: "React, React Native, Next, HTML, CSS, JavaScript, TypeScript"
     },
     {
       icon: <Database className="w-8 h-8 text-[#273677]" />,
       title: "Back-end", 
-      technologies: "Node.js, Python, Java, Spring Boot, REST APIs"
+      technologies: "Node.js, Express"
     },
     {
       icon: <HardDrive className="w-8 h-8 text-[#273677]" />,
       title: "Databases",
-      technologies: "MySQL, PostgreSQL, MongoDB"
-    },
-    {
-      icon: <Cloud className="w-8 h-8 text-[#273677]" />,
-      title: "DevOps",
-      technologies: "Docker, Kubernetes, AWS, Azure, CI/CD"
+      technologies: "MySQL, PostgreSQL"
     },
     {
       icon: <GitBranch className="w-8 h-8 text-[#273677]" />,
       title: "Version Control",
-      technologies: "Git, GitHub, GitLab"
+      technologies: "Git, GitHub"
     }
   ];
 
   const experiences = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Solutions Inc.",
-      period: "2020 - Present",
+      title: "Full Stack Developer",
+      company: "Drodat inc.",
+      period: "april 2025 - august 2025", 
       icon: <Briefcase className="w-5 h-5 text-[#273677]" />
     },
     {
-      title: "Software Engineer", 
-      company: "Innovatech Solutions",
-      period: "2018 - 2020",
+      title: "Front end Developer",
+      company: "Kapital Bank",
+      period: "june 2024 - april 2025",
       icon: <Briefcase className="w-5 h-5 text-[#273677]" />
     },
     {
-      title: "Junior Developer",
-      company: "Startup X",
-      period: "2016 - 2018", 
+      title: "Front end Developer", 
+      company: "Ahorra Seguros",
+      period: "march 2023 - june 2024",
       icon: <Briefcase className="w-5 h-5 text-[#273677]" />
-    }
+    },
   ];
 
   return (
@@ -85,7 +80,7 @@ const ResumeSection = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="mb-20">
+        <div id="skills" className="mb-20">
           <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">Skills</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {skills.map((skill, index) => (
@@ -106,7 +101,7 @@ const ResumeSection = () => {
         </div>
 
         {/* Experience Section */}
-        <div>
+        <div id="experience" className="w-full" >
           <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">Experience</h3>
           <div className="space-y-8 max-w-3xl mx-auto">
             {experiences.map((exp, index) => (

@@ -40,7 +40,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -50,8 +50,6 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        
-            
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           {filters.map((filter) => (
             <button
@@ -69,11 +67,11 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-2xl hover:border-[#273677]/20 transition-all duration-500 transform hover:-translate-y-2"
+              className="max-w-sm group bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-2xl hover:border-[#273677]/20 transition-all duration-500 transform hover:-translate-y-2"
             >
               {/* Project Image Placeholder */}
               <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
