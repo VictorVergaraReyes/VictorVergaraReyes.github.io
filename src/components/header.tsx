@@ -30,7 +30,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <div
                   key={item.name}
-                  onClick={() => scrollToSection(item.href.substring(1))}
+                  onClick={() => scrollToSection(item.href)}
                   className="text-gray-700 hover:text-[#273677] px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}

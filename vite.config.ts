@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: 'https://victorvergarareyes.github.io/VictorVergaraReyes.github.io', // Para GitHub Actions
+  base: './',
   build: {
     outDir: 'dist'
   }
