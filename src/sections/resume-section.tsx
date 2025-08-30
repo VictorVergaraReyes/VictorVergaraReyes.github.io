@@ -5,7 +5,7 @@ const ResumeSection = () => {
     {
       icon: <Code className="w-8 h-8 text-[#273677]" />,
       title: "Front-end",
-      technologies: "React, React Native, Next, HTML, CSS, JavaScript, TypeScript"
+      technologies: "React, React Native, Next, JavaScript, TypeScript"
     },
     {
       icon: <Database className="w-8 h-8 text-[#273677]" />,
@@ -66,7 +66,7 @@ const ResumeSection = () => {
           {/* About Content */}
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Hi, I'm Alex, a Full Stack Developer
+              Hi, I'm Vic, a Full Stack Developer
             </h2>
             
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -82,7 +82,7 @@ const ResumeSection = () => {
         {/* Skills Section */}
         <div id="skills" className="mb-20">
           <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">Skills</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {skills.map((skill, index) => (
               <div 
                 key={index}

@@ -1,5 +1,6 @@
 import { ArrowRight, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
+import {scrollToSection} from '../utils/scroll';
 
 type LetterByLetterTypingProps = {
   text: string;
@@ -64,7 +65,7 @@ const HeroSection = () => {
         {/* Call to Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           {/* Contact Button */}
-          <button className="group bg-[#273677] hover:bg-[#1e2a5a] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-2 min-w-[160px] justify-center">
+          <button onClick={() => scrollToSection("contact")} className="group bg-[#273677] hover:bg-[#1e2a5a] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-2 min-w-[160px] justify-center">
             <Mail className="w-5 h-5" />
             Contact
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
