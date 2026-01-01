@@ -8,86 +8,74 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navItems = [
-    { name: 'About', href: 'about' },
-    { name: 'Skills', href: 'skills' },
-    { name: 'Experience', href: 'experience' },
-    { name: 'Projects', href: 'projects' },
-    { name: 'Contact', href: 'contact' },
+    { name: 'PROJECTS', href: 'projects' },
+    { name: 'ABOUT', href: 'about' },
+    { name: 'CONTACT', href: 'contact' },
   ];
 
   return (
-    <nav className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-gray-900">Portfolio</h1>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
-                <div
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 hover:text-[#273677] px-3 py-2 text-sm font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </div>
-              ))}
-              <a
-                href="/resume.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-[#273677] text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-[#1e2a5a] transition-colors duration-200"
-              >
-                Resume
-              </a>
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#273677] hover:bg-gray-100 transition-colors duration-200"
-              aria-expanded="false"
-            >
-              {isMenuOpen ? (
-                <X className="block h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="block h-6 w-6" aria-hidden="true" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-              {navItems.map((item) => (
-                <div
-                  key={item.name}
-                  onClick={() => {scrollToSection(item.href); setIsMenuOpen(false);}}
-                  className="text-gray-700 hover:text-[#273677] px-3 py-2 text-sm font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </div>
-              ))}
-              <a
-                href="/resume.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-[#273677] text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-[#1e2a5a] transition-colors duration-200"
-              >
-                Resume
-              </a>
-            </div>
-          </div>
-        )}
+    <nav className="fixed top-0 left-0 right-0 z-30 p-4 md:p-6 flex justify-between items-center bg-white/5 dark:bg-black/20 backdrop-blur-md border-b border-white/10 dark:border-primary/20 transition-all duration-300">
+      {/* Logo */}
+      <div className="text-2xl font-display font-black tracking-widest text-primary hover:text-secondary transition-colors cursor-pointer group">
+        <span className="inline-block group-hover:skew-x-12 transition-transform">NEO</span>
+        <span className="text-secondary group-hover:-skew-x-12 inline-block transition-transform">_DEV</span>
       </div>
+
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex gap-8 font-mono text-lg tracking-wider">
+        {navItems.map((item) => (
+          <button
+            key={item.name}
+            onClick={() => scrollToSection(item.href)}
+            className="relative group bg-transparent border-none p-0 cursor-pointer text-gray-800 dark:text-gray-100"
+          >
+            <span className="group-hover:text-primary transition-colors">{item.name}</span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+          </button>
+        ))}
+      </div>
+
+      {/* Login / Action Button */}
+      <div className="hidden md:block">
+        <button
+          className="bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-black px-6 py-2 rounded-none font-mono uppercase tracking-widest transition-all duration-300 shadow-[0_0_10px_rgba(0,229,255,0.3)] hover:shadow-[0_0_20px_rgba(0,229,255,0.6)] clip-path-slant"
+        >
+          System.Login()
+        </button>
+      </div>
+
+      {/* Mobile Menu Button */}
+      <div className="md:hidden">
+        <button
+          onClick={toggleMenu}
+          className="text-secondary hover:text-primary transition-colors"
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 right-0 bg-background-dark/95 backdrop-blur-xl border-b border-primary/20 p-4 flex flex-col gap-4 shadow-2xl animate-glitch">
+          {navItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => {
+                scrollToSection(item.href);
+                setIsMenuOpen(false);
+              }}
+              className="text-left font-mono text-xl text-gray-100 hover:text-secondary py-2 border-l-2 border-transparent hover:border-primary pl-4 transition-all"
+            >
+              {item.name}
+            </button>
+          ))}
+          <button
+            className="mt-4 w-full bg-secondary/10 border border-secondary text-secondary hover:bg-secondary hover:text-black px-6 py-3 font-mono uppercase tracking-widest transition-all text-center"
+          >
+            System.Login()
+          </button>
+        </div>
+      )}
     </nav>
   );
 };

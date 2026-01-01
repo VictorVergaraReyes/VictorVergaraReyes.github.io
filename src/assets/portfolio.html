@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cyberpunk Vaporwave Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=VT323&amp;family=Rajdhani:wght@300;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D900FF", // Neon Magenta
+                        secondary: "#00E5FF", // Neon Cyan
+                        "background-light": "#f3f4f6", // Very light gray (almost white) for a harsh contrast if light mode is forced (though this theme screams dark mode)
+                        "background-dark": "#050014", // Deep dark purple/black
+                        "surface-dark": "#120526",
+                        "accent-red": "#FF003C",
+                    },
+                    fontFamily: {
+                        display: ["Orbitron", "sans-serif"],
+                        mono: ["VT323", "monospace"],
+                        body: ["Rajdhani", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'cyber-grid': "linear-gradient(to right, rgba(217, 0, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(217, 0, 255, 0.1) 1px, transparent 1px)",
+                        'vignette': 'radial-gradient(circle, transparent 50%, #050014 100%)',
+                    },
+                    animation: {
+                        'glitch': 'glitch 2s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'scanline': 'scanline 8s linear infinite',
+                    },
+                    keyframes: {
+                        glitch: {
+                            '0%': { transform: 'translate(0)' },
+                            '20%': { transform: 'translate(-2px, 2px)' },
+                            '40%': { transform: 'translate(-2px, -2px)' },
+                            '60%': { transform: 'translate(2px, 2px)' },
+                            '80%': { transform: 'translate(2px, -2px)' },
+                            '100%': { transform: 'translate(0)' },
+                        },
+                        scanline: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100%)' }
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        .text-shadow-neon {
+            text-shadow: 0 0 5px #D900FF, 0 0 10px #D900FF, 0 0 20px #D900FF, 0 0 40px #00E5FF;
+        }
+
+        .chromatic-aberration {
+            position: relative;
+            color: white;
+        }
+
+        .chromatic-aberration::before,
+        .chromatic-aberration::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        .chromatic-aberration::before {
+            left: 2px;
+            text-shadow: -1px 0 #ff003c;
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+
+        .chromatic-aberration::after {
+            left: -2px;
+            text-shadow: -1px 0 #00E5FF;
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+            clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitch-anim-1 {
+            0% {
+                clip-path: inset(20% 0 80% 0);
+            }
+
+            20% {
+                clip-path: inset(60% 0 1% 0);
+            }
+
+            40% {
+                clip-path: inset(40% 0 50% 0);
+            }
+
+            60% {
+                clip-path: inset(80% 0 5% 0);
+            }
+
+            80% {
+                clip-path: inset(10% 0 70% 0);
+            }
+
+            100% {
+                clip-path: inset(30% 0 20% 0);
+            }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% {
+                clip-path: inset(10% 0 60% 0);
+            }
+
+            20% {
+                clip-path: inset(80% 0 5% 0);
+            }
+
+            40% {
+                clip-path: inset(40% 0 10% 0);
+            }
+
+            60% {
+                clip-path: inset(30% 0 50% 0);
+            }
+
+            80% {
+                clip-path: inset(10% 0 20% 0);
+            }
+
+            100% {
+                clip-path: inset(50% 0 30% 0);
+            }
+        }
+
+        .crt-overlay {
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .glass-panel {
+            background: rgba(18, 5, 38, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(217, 0, 255, 0.2);
+            box-shadow: 0 0 15px rgba(217, 0, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 min-h-screen relative overflow-x-hidden font-body selection:bg-primary selection:text-white">
+    <div class="fixed inset-0 pointer-events-none z-50 crt-overlay opacity-30"></div>
+    <div
+        class="fixed inset-0 pointer-events-none z-40 bg-gradient-to-b from-transparent via-primary/5 to-transparent h-[10px] w-full animate-scanline opacity-20">
+    </div>
+    <div
+        class="fixed inset-0 bg-cyber-grid bg-[length:40px_40px] opacity-20 pointer-events-none perspective-[500px] transform-style-3d">
+    </div>
+    <nav
+        class="fixed top-0 left-0 right-0 z-30 p-6 flex justify-between items-center bg-white/5 dark:bg-black/20 backdrop-blur-md border-b border-white/10 dark:border-primary/20">
+        <div
+            class="text-2xl font-display font-black tracking-widest text-primary hover:text-secondary transition-colors cursor-pointer group">
+            <span class="inline-block group-hover:skew-x-12 transition-transform">NEO</span><span
+                class="text-secondary group-hover:-skew-x-12 inline-block transition-transform">_DEV</span>
+        </div>
+        <div class="hidden md:flex gap-8 font-mono text-lg tracking-wider">
+            <a class="relative group" href="#">
+                <span class="group-hover:text-primary transition-colors">PROJECTS</span>
+                <span
+                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="relative group" href="#">
+                <span class="group-hover:text-primary transition-colors">ABOUT</span>
+                <span
+                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="relative group" href="#">
+                <span class="group-hover:text-primary transition-colors">CONTACT</span>
+                <span
+                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
+            </a>
+        </div>
+        <button
+            class="bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-black px-6 py-2 rounded-none font-mono uppercase tracking-widest transition-all duration-300 shadow-[0_0_10px_rgba(0,229,255,0.3)] hover:shadow-[0_0_20px_rgba(0,229,255,0.6)] clip-path-slant">
+            System.Login()
+        </button>
+    </nav>
+    <main class="relative z-10 pt-32 pb-20 px-6 min-h-screen flex flex-col justify-center items-center overflow-hidden">
+        <div
+            class="absolute top-1/4 left-10 w-32 h-32 border-l-2 border-t-2 border-primary/40 opacity-50 dark:opacity-80">
+        </div>
+        <div
+            class="absolute bottom-1/4 right-10 w-48 h-48 border-r-2 border-b-2 border-secondary/40 opacity-50 dark:opacity-80">
+        </div>
+        <div
+            class="absolute top-1/2 left-1/4 w-96 h-96 bg-primary rounded-full filter blur-[150px] opacity-20 animate-pulse-slow pointer-events-none">
+        </div>
+        <div
+            class="absolute top-1/3 right-1/4 w-80 h-80 bg-secondary rounded-full filter blur-[120px] opacity-20 animate-pulse-slow pointer-events-none delay-1000">
+        </div>
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 flex flex-col gap-6 text-left relative">
+                <div
+                    class="inline-flex items-center gap-2 self-start px-3 py-1 bg-surface-dark/50 border border-secondary/30 rounded text-secondary font-mono text-sm tracking-widest backdrop-blur-sm">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+                    </span>
+                    ONLINE :: SYSTEM_READY
+                </div>
+                <h1 class="text-6xl md:text-8xl font-display font-black leading-tight mb-2 tracking-tighter"
+                    data-text="REALITY_SHIFT">
+                    <span class="block chromatic-aberration" data-text="DIGITAL">DIGITAL</span>
+                    <span
+                        class="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary filter drop-shadow-[0_0_10px_rgba(217,0,255,0.5)]">ALCHEMIST</span>
+                </h1>
+                <p
+                    class="text-lg md:text-xl text-gray-600 dark:text-gray-300 font-body max-w-2xl leading-relaxed border-l-4 border-accent-red pl-6 py-2 bg-gradient-to-r from-accent-red/10 to-transparent">
+                    Crafting immersive web experiences at the intersection of design and code.
+                    Specializing in <span class="text-secondary font-bold">vaporwave aesthetics</span> and next-gen
+                    interfaces.
+                    Let's break the simulation together.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <button
+                        class="relative px-8 py-4 bg-primary text-white font-display font-bold text-lg tracking-wider uppercase group overflow-hidden">
+                        <span
+                            class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                        <span class="relative flex items-center gap-2">
+                            View Portfolio <span class="material-icons text-sm">arrow_forward</span>
+                        </span>
+                    </button>
+                    <button
+                        class="px-8 py-4 bg-transparent border border-white/20 dark:border-white/20 text-gray-800 dark:text-white font-mono text-lg tracking-wider uppercase hover:bg-white/5 hover:border-secondary hover:text-secondary transition-all duration-300 group">
+                        <span class="group-hover:hidden">Initialize_Contact</span>
+                        <span class="hidden group-hover:inline">&lt;Send_Signal/&gt;</span>
+                    </button>
+                </div>
+                <div class="mt-12 flex gap-8 font-mono text-sm text-gray-500 dark:text-gray-400">
+                    <div>
+                        <span class="block text-2xl text-secondary font-bold">98%</span>
+                        SYNC_RATE
+                    </div>
+                    <div>
+                        <span class="block text-2xl text-primary font-bold">404</span>
+                        REALITY_ERRORS
+                    </div>
+                    <div>
+                        <span class="block text-2xl text-accent-red font-bold">24/7</span>
+                        UPTIME
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative">
+                <div class="relative w-full aspect-[4/5] max-w-md mx-auto perspective-1000">
+                    <div
+                        class="absolute inset-0 translate-x-4 translate-y-4 bg-gradient-to-br from-accent-red/20 to-primary/20 border border-accent-red/50 rounded-lg transform -rotate-6 z-0">
+                    </div>
+                    <div
+                        class="absolute inset-0 -translate-x-4 -translate-y-4 bg-gradient-to-tl from-secondary/20 to-primary/20 border border-secondary/50 rounded-lg transform rotate-3 z-10 backdrop-blur-sm">
+                    </div>
+                    <div
+                        class="absolute inset-0 glass-panel rounded-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-500 z-20 flex flex-col">
+                        <div class="h-8 bg-surface-dark border-b border-primary/20 flex items-center px-3 gap-2">
+                            <div class="w-2 h-2 rounded-full bg-accent-red"></div>
+                            <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-secondary"></div>
+                            <div class="ml-auto font-mono text-[10px] text-primary/70">IMG_SOURCE: EVA_01</div>
+                        </div>
+                        <div class="flex-1 relative group overflow-hidden bg-black">
+                            <img alt="Cyberpunk neon city figure"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 mix-blend-screen"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB623pk0iv8oFlAlTrWqpLRaMpGLnROsgIhBCaxo-oxxdHqvFcp_EQDjvq1Oli8SbKEOD-ZycibGfPOZEM1lNCuDYhKRtmo4ZVLmYQH2ev_wVtnnjTqYrcbHBwc_fo2-c7wFrV3tMIBcp5Xqx9bU5NLdOdomIkMcX_Q7yitDPd765nkXqA8oP8RNFhTHwxuQxVEO_Yv5fZ2hjF1NXXl-yCZEW-Tratd8N1NvUgyaHeQwXMSbY3nKDr7O_H50TYFAj5DLR0J2BpSlQ" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-secondary/20 mix-blend-overlay">
+                            </div>
+                            <div
+                                class="absolute bottom-6 left-6 font-display font-bold text-4xl text-white mix-blend-difference opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                WAKE UP
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-primary/20 bg-surface-dark/80">
+                            <div class="font-mono text-xs text-secondary mb-1">CURRENT_PROJECT</div>
+                            <div class="font-display font-bold text-white text-lg">NEON GENESIS</div>
+                            <div class="w-full bg-gray-700 h-1 mt-3 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-primary to-secondary w-3/4 h-full animate-pulse">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -right-4 glass-panel p-4 rounded border border-secondary/30 hidden md:block animate-bounce"
+                    style="animation-duration: 3s;">
+                    <code class="font-mono text-xs text-secondary">
+<span class="text-primary">const</span> reality = <span class="text-accent-red">null</span>;<br/>
+<span class="text-primary">while</span>(true) {<br/>
+                          dream();<br/>
+                        }
+                    </code>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div
+        class="fixed bottom-0 left-0 right-0 h-10 bg-surface-dark border-t border-primary/30 flex items-center overflow-hidden z-20">
+        <div
+            class="animate-[marquee_20s_linear_infinite] whitespace-nowrap font-mono text-sm text-primary uppercase tracking-[0.2em] flex gap-12">
+            <span>/// System Warning: Aesthetic Overload Detected</span>
+            <span>/// User: Unidentified</span>
+            <span>/// Location: Cyberspace Sector 7</span>
+            <span>/// Vaporwave Protocol: Active</span>
+            <span>/// System Warning: Aesthetic Overload Detected</span>
+            <span>/// User: Unidentified</span>
+            <span>/// Location: Cyberspace Sector 7</span>
+            <span>/// Vaporwave Protocol: Active</span>
+        </div>
+    </div>
+    <div class="fixed top-1/2 left-4 -translate-y-1/2 hidden xl:flex flex-col gap-8 pointer-events-none z-0 opacity-40">
+        <span
+            class="writing-vertical text-4xl font-black text-transparent bg-clip-text bg-gradient-to-b from-primary to-transparent font-display">
+            サイバーパンク
+        </span>
+    </div>
+    <div
+        class="fixed top-1/2 right-4 -translate-y-1/2 hidden xl:flex flex-col gap-8 pointer-events-none z-0 opacity-40">
+        <span
+            class="writing-vertical text-4xl font-black text-transparent bg-clip-text bg-gradient-to-t from-secondary to-transparent font-display">
+            未来は今
+        </span>
+    </div>
+    <style>
+        .writing-vertical {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050014;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D900FF;
+        }
+    </style>
+
+</body>
+
+</html>
