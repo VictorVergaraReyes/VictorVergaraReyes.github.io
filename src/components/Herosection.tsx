@@ -1,7 +1,9 @@
-// HeroSection.jsx
-// Sección Hero principal con título glitch y estadísticas
+import { useDarkMode } from "../hooks/useDarkMode";
 
 const HeroSection = () => {
+  const { isDark } = useDarkMode();
+  console.log("first render - isDark:", isDark);
+
   return (
     <main className="relative min-h-screen flex items-center pt-24 px-6 md:px-12 lg:px-20 overflow-hidden">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -18,16 +20,16 @@ const HeroSection = () => {
 
           {/* Título principal con efecto chromatic aberration */}
           <h1 className="text-6xl md:text-8xl font-display font-black leading-tight mb-2 tracking-tighter">
-            <span className="block chromatic-aberration" data-text="DIGITAL">
-              DIGITAL
+          <span className={`block ${isDark ? 'dark-chromatic-aberration' : 'chromatic-aberration'}`} data-text="VICTOR">
+              VICTOR
             </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary filter drop-shadow-[0_0_10px_rgba(217,0,255,0.5)]">
-              ALCHEMIST
+              VERGARA
             </span>
           </h1>
 
           {/* Descripción */}
-          <p className="text-lg md:text-xl text-purple-500 dark:text-gray-300 font-body max-w-2xl leading-relaxed border-l-4 border-accent-red pl-6 py-2 bg-gradient-to-r from-accent-red/10 to-transparent">
+          <p className="text-lg md:text-xl text-purple-500 dark:text-gray-600 font-body max-w-2xl leading-relaxed border-l-4 border-accent-red pl-6 py-2 bg-gradient-to-r from-accent-red/10 to-transparent">
             Crafting immersive web experiences at the intersection of design and code.
             Specializing in <span className="text-secondary font-bold">vaporwave aesthetics</span> and next-gen
             interfaces.

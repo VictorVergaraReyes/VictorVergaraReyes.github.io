@@ -77,7 +77,7 @@ const ResumeSection = () => {
               Hi, I'm Vic, a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Full Stack Developer</span>
             </h2>
 
-            <p className="text-lg text-gray-300 leading-relaxed font-body border-l-2 border-primary/50 pl-4 bg-white/5 py-2">
+            <p className="text-lg text-gray-600 leading-relaxed font-body border-l-2 border-primary/50 pl-4 bg-white/5 py-2">
               I'm a passionate full stack developer with a focus on creating innovative and user-friendly web applications. With a strong foundation in both front-end and back-end technologies, I enjoy tackling complex challenges and delivering high-quality solutions. My goal is to build impactful software that makes a difference.
             </p>
 
@@ -103,7 +103,7 @@ const ResumeSection = () => {
                     {skill.icon}
                   </div>
                   <h4 className="text-xl font-display font-bold text-white group-hover:text-secondary transition-colors">{skill.title}</h4>
-                  <p className="text-sm text-gray-300 font-mono leading-relaxed">{skill.technologies}</p>
+                  <p className="text-sm text-gray-600 font-mono leading-relaxed">{skill.technologies}</p>
                 </div>
               </div>
             ))}

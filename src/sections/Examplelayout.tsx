@@ -114,7 +114,7 @@ const ExampleLayout: React.FC = () => {
             <h3 className="font-display text-3xl font-bold text-white mb-4">
               ABOUT <span className="text-secondary">ME</span>
             </h3>
-            <p className="font-body text-gray-300 leading-relaxed mb-6">
+            <p className="font-body text-gray-600 leading-relaxed mb-6">
               I'm a digital artist specializing in cyberpunk aesthetics and immersive web experiences. 
               My work blends cutting-edge technology with retro-futuristic design to create unique digital landscapes.
             </p>

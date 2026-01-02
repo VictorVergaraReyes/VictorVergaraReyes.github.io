@@ -2,8 +2,8 @@
 // Título con efecto de aberración cromática y glitch
 
 const GlitchTitle = ({ 
-  topText = 'DIGITAL',
-  bottomText = 'ALCHEMIST',
+  topText = 'VICTOR',
+  bottomText = 'VERGARA',
   useGlitch = true,
   className = ''
 }) => {

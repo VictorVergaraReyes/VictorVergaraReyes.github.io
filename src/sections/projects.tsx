@@ -45,7 +45,7 @@ const ProjectsSection = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 text-shadow-neon">Projects</h2>
-          <p className="text-lg text-gray-300 max-w-4xl mx-auto font-body">
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto font-body">
             Explore a selection of my most <span className="text-secondary">impactful projects</span>, showcasing my skills in full-stack development and vaporwave engineering.
           </p>
         </div>

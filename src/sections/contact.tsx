@@ -11,7 +11,7 @@ const ContactSection = () => {
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 text-shadow-neon">
             INITIALIZE <span className="text-secondary">CONTACT</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-mono">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-mono">
             Available for freelance missions. Transmit your data if you require assistance.
           </p>
         </div>
