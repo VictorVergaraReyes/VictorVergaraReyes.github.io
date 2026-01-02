@@ -15,14 +15,10 @@ body {
   text-shadow: 0 0 5px #D900FF, 0 0 10px #D900FF, 0 0 20px #D900FF, 0 0 40px #00E5FF;
 }
 
-/* .light-chromatic-aberration {
-  position: relative;
-  color: #222222;
-} */
-
 .chromatic-aberration {
   position: relative;
-  color: white;
+  color: #da0bfb;
+;
 }
 
 .chromatic-aberration::before,
@@ -50,9 +46,10 @@ body {
   clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
 }
 
-.chromatic-aberration {
+.dark-chromatic-aberration {
   position: relative;
-  color: white;
+  color: #591884;
+;
 }
 
 .dark-chromatic-aberration::before,
@@ -78,6 +75,19 @@ body {
   text-shadow: -1px 0 #00E5FF;
   animation: glitch-anim-2 3s infinite linear alternate-reverse;
   clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+}
+
+.alchemist-text {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  --tw-drop-shadow: drop-shadow(0 0 10px rgba(217,0,255,0.5));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  color: transparent;
+  background-clip: text;
+  --tw-gradient-to: #00E5FF var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-from: #D900FF var(--tw-gradient-from-position);
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  display: block;
 }
 
 @keyframes glitch-anim-1 {

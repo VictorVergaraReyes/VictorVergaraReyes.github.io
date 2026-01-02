@@ -1,8 +1,8 @@
 import { useDarkMode } from "../context/DarkModeContext";
+import CyberpunkHero from "./Cyberpunkhero";
 
 const HeroSection = () => {
   const { isDark } = useDarkMode();
-  console.log("first render - isDark:", isDark);
 
   return (
     <main className="relative min-h-screen flex items-center pt-24 px-6 md:px-12 lg:px-20 overflow-hidden">
@@ -19,17 +19,23 @@ const HeroSection = () => {
           </div>
 
           {/* Título principal con efecto chromatic aberration */}
-          <h1 className="text-6xl md:text-8xl font-display font-black leading-tight mb-2 tracking-tighter">
+          {/* <h1 className="text-6xl md:text-8xl font-display font-black leading-tight mb-2 tracking-tighter">
           <span className={`block ${isDark ? 'dark-chromatic-aberration' : 'chromatic-aberration'}`} data-text="VICTOR">
               VICTOR
             </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary filter drop-shadow-[0_0_10px_rgba(217,0,255,0.5)]">
               VERGARA
-            </span>
+            </span>            
           </h1>
+          <h1 className="text-6xl md:text-8xl font-display font-black leading-tight mb-2 tracking-tighter" data-text="REALITY_SHIFT">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary filter drop-shadow-[0_0_10px_rgba(217,0,255,0.5)]">ALCHEMIST</span>
+          </h1> */}
+
+          <CyberpunkHero spanText="VICTOR" />
+          <CyberpunkHero spanText="VERGARA" />
 
           {/* Descripción */}
-          <p className="text-lg md:text-xl text-purple-500 dark:text-gray-600 font-body max-w-2xl leading-relaxed border-l-4 border-accent-red pl-6 py-2 bg-gradient-to-r from-accent-red/10 to-transparent">
+          <p className="text-lg md:text-xl text-purple-500 dark:text-gray-600 font-body max-w-2xl leading-relaxed pl-6 py-2 bg-gradient-to-r from-accent-red/10 to-transparent">
             Crafting immersive web experiences at the intersection of design and code.
             Specializing in <span className="text-secondary font-bold">vaporwave aesthetics</span> and next-gen
             interfaces.
