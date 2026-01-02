@@ -7,18 +7,17 @@ import ContactSection from './sections/contact'
 // import BackgroundEffects from './components/BackgroundEffects'
 import MarqueeFooter from './components/marquee-footer'
 import ExampleLayout from './sections/Examplelayout'
+import { DarkModeProvider } from './context/DarkModeContext'
 
 function App() {
-
-
   return (
-    <>
+    <DarkModeProvider>
       <ExampleLayout />
       <ResumeSection />
       <ProjectsSection />
       <ContactSection />
       <MarqueeFooter />
-    </>
+    </DarkModeProvider>
   )
 }
 

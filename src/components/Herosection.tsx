@@ -1,4 +1,4 @@
-import { useDarkMode } from "../hooks/useDarkMode";
+import { useDarkMode } from "../context/DarkModeContext";
 
 const HeroSection = () => {
   const { isDark } = useDarkMode();

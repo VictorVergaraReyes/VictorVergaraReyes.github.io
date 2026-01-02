@@ -1,7 +1,7 @@
 // Navigation.tsx
 // Barra de navegación con efecto glassmorphism
 
-import { useDarkMode } from '../hooks/useDarkMode';
+import { useDarkMode } from '../context/DarkModeContext';
 
 interface MenuItem {
   label: string;
