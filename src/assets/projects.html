@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cyberpunk Portfolio - Projects</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b90df2",
+                        "primary-dim": "#5e0a7a",
+                        "background-light": "#f0f0f5",
+                        "background-dark": "#120816",
+                        "surface-dark": "#1e1023",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #2a1b30 1px, transparent 1px), linear-gradient(to bottom, #2a1b30 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #120816; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b90df2; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d946ef; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden transition-colors duration-300 min-h-screen flex flex-col">
+<!-- Background Grid Decoration -->
+<div class="fixed inset-0 z-0 opacity-[0.03] dark:opacity-[0.1] pointer-events-none" style="background-size: 40px 40px; background-image: linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px);"></div>
+<!-- Gradient Glow Top Right -->
+<div class="fixed top-[-20%] right-[-10%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
+<div class="layout-container flex h-full grow flex-col relative z-10">
+<!-- Header Section -->
+<header class="w-full flex justify-center py-10 px-6 sm:px-10 lg:px-40">
+<div class="w-full max-w-[1200px] flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<p class="text-primary text-xs font-bold tracking-[0.2em] uppercase">System_Ready // User_Logged_In</p>
+</div>
+<h2 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight uppercase dark:text-white text-slate-900 drop-shadow-[0_0_10px_rgba(185,13,242,0.5)]">
+                    System_Projects <span class="text-primary">//</span> <span class="opacity-50 font-light">[ARCHIVE]</span>
+</h2>
+<div class="h-[1px] w-full bg-gradient-to-r from-primary via-primary/50 to-transparent mt-4"></div>
+</div>
+</header>
+<!-- Filters Section -->
+<section class="w-full flex justify-center px-6 sm:px-10 lg:px-40 pb-8">
+<div class="w-full max-w-[1200px]">
+<div class="flex flex-wrap gap-3 items-center">
+<span class="text-sm font-bold text-slate-500 dark:text-slate-400 mr-2 font-mono">&gt; FILTER:</span>
+<!-- Active Chip -->
+<button class="group relative flex h-9 items-center justify-center gap-x-2 rounded px-4 bg-primary text-white border border-primary transition-all duration-300 shadow-[0_0_15px_rgba(185,13,242,0.4)]">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span class="text-sm font-bold uppercase tracking-wide">ALL_SYSTEMS</span>
+</button>
+<!-- Inactive Chips -->
+<button class="flex h-9 items-center justify-center gap-x-2 rounded px-4 bg-surface-light dark:bg-surface-dark border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors duration-300">
+<span class="text-sm font-medium uppercase tracking-wide">UX_UI_DESIGN</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded px-4 bg-surface-light dark:bg-surface-dark border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors duration-300">
+<span class="text-sm font-medium uppercase tracking-wide">3D_MODELING</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded px-4 bg-surface-light dark:bg-surface-dark border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors duration-300">
+<span class="text-sm font-medium uppercase tracking-wide">FRONTEND_DEV</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded px-4 bg-surface-light dark:bg-surface-dark border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors duration-300">
+<span class="text-sm font-medium uppercase tracking-wide">WEB3_PROTOCOLS</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<main class="w-full flex justify-center px-6 sm:px-10 lg:px-40 pb-16">
+<div class="w-full max-w-[1200px]">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<article class="group relative overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 hover:border-primary transition-all duration-300 hover:shadow-[0_0_20px_rgba(185,13,242,0.25)] flex flex-col h-[420px]">
+<!-- Image Container -->
+<div class="relative h-2/3 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Abstract neon cityscape with purple and blue grid lines" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIgEPfwgTeESCSy05TbZL9TrIVUY0rpZn5onIWLBOC9g6rqKZe1-cuZkBXUu2ZPDWiCcOGa14nvTCWrndpELyfb-hUI-PxskhQnxYx74Tro3AFcmzDzHsaHvLeNVSquo6Io3q8WPz3ndncAbk6C7jMZoFFD0SLhV-ceIxypJqZikwXH_x-XYBYg-R6Gg96Jxv-a0hois-_CgHB7rh-UbLDMy_VcFDC_2j3xLBkOWIPXL4dmupPi5UBN_bWr2VzaUVkxblRb3NeU-E");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-90"></div>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm border border-primary/30 px-3 py-1 rounded text-xs font-mono text-primary">
+                                VER. 2.0
+                            </div>
+</div>
+<!-- Content -->
+<div class="absolute bottom-0 w-full p-6 flex flex-col gap-3 bg-gradient-to-t from-surface-light dark:from-surface-dark via-surface-light dark:via-surface-dark to-transparent">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">view_in_ar</span>
+<span class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">IMMERSIVE_WEB</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">NEON_NEXUS</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">
+                                A WebGL immersive environment exploring futuristic cityscapes. Optimized for high-performance rendering.
+                            </p>
+<div class="pt-2 flex flex-wrap gap-2">
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">THREE.JS</span>
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">REACT</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group relative overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 hover:border-primary transition-all duration-300 hover:shadow-[0_0_20px_rgba(185,13,242,0.25)] flex flex-col h-[420px]">
+<div class="relative h-2/3 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Retro synthesizer interface with glowing knobs and sliders" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsLqR5dMyA7LKgAr4fFCkbG3-AlDEaDA9JmapDLixE7KZlE5CDcUVS9m01rup1zkNM-Hmo4ndiLfbwQ_EAWfbg8WzFiMeQohXHxj4yHA7w-Cs0a2a7u7lQhXVo3zdhAtgp0JdiVIGpppUxPfTsy3ug5ik-oQgfiGhWtEzCw2gdQbB7ngU-ZC6-YuBhantUqpHC9xlxsZ3eqmskSkWLkGCAETV-kY7Bi1gyEqCg7QDRcwbA3vdy81ViEtv1WpLDRVp9tbKoDgtAlnw");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-90"></div>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm border border-primary/30 px-3 py-1 rounded text-xs font-mono text-primary">
+                                BETA
+                            </div>
+</div>
+<div class="absolute bottom-0 w-full p-6 flex flex-col gap-3 bg-gradient-to-t from-surface-light dark:from-surface-dark via-surface-light dark:via-surface-dark to-transparent">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">graphic_eq</span>
+<span class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">AUDIO_VISUALIZER</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">SYNTHWAVE_FM</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">
+                                Interactive music player with real-time frequency analysis and retro-style visualizers.
+                            </p>
+<div class="pt-2 flex flex-wrap gap-2">
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">AUDIO API</span>
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">VUE</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group relative overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 hover:border-primary transition-all duration-300 hover:shadow-[0_0_20px_rgba(185,13,242,0.25)] flex flex-col h-[420px]">
+<div class="relative h-2/3 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Mechanical keyboard on a desk with pink and blue lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLYHprc-dM_FtLKDiu1Rxe0-3ELDLiYlCUJGQrPXX0hrQcBKHMnDx30JZR5HztHvrBcwDQiq66TiTx3vMKuAr-EPR0OAhVdjhulUGGm1sTQM_swwFwbSE8Y3SxhS6GVOUVMakagCSayCVD9c-qtOzpmj1wcsPYHHVbG-Dkc-S4BAEqmIGNkL0yPc9WainoC195CWOuRHDLtEyNR-dzGZraf_6s_Jz5f2ZlNMGAilxAi4AheH6IVTqn30nIN-lpkB76A7g2S881Hu8");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-90"></div>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm border border-primary/30 px-3 py-1 rounded text-xs font-mono text-primary">
+                                LIVE
+                            </div>
+</div>
+<div class="absolute bottom-0 w-full p-6 flex flex-col gap-3 bg-gradient-to-t from-surface-light dark:from-surface-dark via-surface-light dark:via-surface-dark to-transparent">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">keyboard</span>
+<span class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">E_COMMERCE</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">CYBER_DECK</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">
+                                Custom keyboard configuration tool with 3D preview and checkout integration.
+                            </p>
+<div class="pt-2 flex flex-wrap gap-2">
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">SHOPIFY</span>
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">WEBGL</span>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group relative overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 hover:border-primary transition-all duration-300 hover:shadow-[0_0_20px_rgba(185,13,242,0.25)] flex flex-col h-[420px]">
+<div class="relative h-2/3 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Digital glitch art pattern with distorted pixels" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAK826waYdVYWGmoFvPH5Y5pYeuV28v0xqzuRFFk1oBgxq4XEYqOdFGZne76KTMU0SL3JTsAWqF7Xf3ekbOGiiROJ9j1PRmumuDmYIKU6Qmg01ENYcoZpI3ji30OSzhBLSAM8msqSVcpZII5ZfkbdojZd47jkNaxgPj6vTpegHdm-KU_k744-e2g9_uKTGgisxdtD1FogbAsps9Ip1jGqiW6_XI6C4WZa7rHdPRubMXz7zWcHBjdRfZdMUpU0d0bO9cA4qR5Zmtz34");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-90"></div>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm border border-primary/30 px-3 py-1 rounded text-xs font-mono text-primary">
+                                EXP
+                            </div>
+</div>
+<div class="absolute bottom-0 w-full p-6 flex flex-col gap-3 bg-gradient-to-t from-surface-light dark:from-surface-dark via-surface-light dark:via-surface-dark to-transparent">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">gesture</span>
+<span class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">GENERATIVE_ART</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">GLITCH_GEN</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">
+                                An experimental playground for generating glitch art from user-uploaded photos.
+                            </p>
+<div class="pt-2 flex flex-wrap gap-2">
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">CANVAS API</span>
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">P5.JS</span>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="group relative overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 hover:border-primary transition-all duration-300 hover:shadow-[0_0_20px_rgba(185,13,242,0.25)] flex flex-col h-[420px]">
+<div class="relative h-2/3 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Abstract purple polygon shapes floating in dark space" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBj1o9gMX_zVHw9JtpWIJuBAkHLWXfyjUXw-HldGW5pJcWMz8T3e00UR-XVOyL_1FD_I7oFwN0SYwtthwjFQ91_cvONKRqozepkvO-4hb-T3wzBSqwXDFX7VyA-3EGNAjNBv8zK7pCfq6jKs62S7s85nB0vyWbDpP1T3RjPQ-Y-gjxUVCn3Ew7pSUjzwRfnNa_3ZPPmgc8y1mhsgE6faYqa9-odOQ5pAjGPactd8FiutDTaHcjQNDLE1ALWEGwHmKpj61ZMGt-biDE");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-90"></div>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm border border-primary/30 px-3 py-1 rounded text-xs font-mono text-primary">
+                                1.0
+                            </div>
+</div>
+<div class="absolute bottom-0 w-full p-6 flex flex-col gap-3 bg-gradient-to-t from-surface-light dark:from-surface-dark via-surface-light dark:via-surface-dark to-transparent">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">token</span>
+<span class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">BLOCKCHAIN</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">ETHER_VAULT</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">
+                                Secure wallet dashboard design with dark mode aesthetic and micro-interactions.
+                            </p>
+<div class="pt-2 flex flex-wrap gap-2">
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">SOLIDITY</span>
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">REACT</span>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="group relative overflow-hidden rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 hover:border-primary transition-all duration-300 hover:shadow-[0_0_20px_rgba(185,13,242,0.25)] flex flex-col h-[420px]">
+<div class="relative h-2/3 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Futuristic data HUD interface overlay" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmgQzPj7Swjuu_laID5vPnaMc_iBO7fh2uUj4nBd-_mDMzu2f9xGtv1rouWGeP6sUCG0N6Wx24fHHvhrsIUcBILR7RA2Ox2zn0TrHFsLCS3aSpVBYabIDzQhmQTEy1GckIqMyoeDNpz2j12Gx2MMe8Vd8ilJ-_w0QCZfkg_aYeHwRnK9SXiO_wZJSJLz3dFnIw-6dDJeHw3GgaGpmj6R0Ffx-O3K2wsv6GXv2EIs6UawMVtfzP1ENd-JHD7ukcanyxsa_f2LJ0NRo");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-90"></div>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm border border-primary/30 px-3 py-1 rounded text-xs font-mono text-primary">
+                                WIP
+                            </div>
+</div>
+<div class="absolute bottom-0 w-full p-6 flex flex-col gap-3 bg-gradient-to-t from-surface-light dark:from-surface-dark via-surface-light dark:via-surface-dark to-transparent">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">security</span>
+<span class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">CYBER_SECURITY</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">NET_DEFENSE</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">
+                                Visualization tool for network traffic and security threat monitoring.
+                            </p>
+<div class="pt-2 flex flex-wrap gap-2">
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">D3.JS</span>
+<span class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 font-mono">PYTHON</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- CTA Section -->
+<div class="flex justify-center pb-20 px-6">
+<button class="relative group flex items-center justify-center min-w-[200px] h-14 overflow-hidden rounded-lg bg-surface-dark border-2 border-primary text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-[0_0_30px_rgba(185,13,242,0.6)]">
+<span class="absolute inset-0 w-full h-full bg-primary/20 transform -translate-x-full skew-x-12 transition-transform duration-500 group-hover:translate-x-full"></span>
+<span class="relative flex items-center gap-2 text-lg font-bold tracking-widest uppercase">
+<span class="material-symbols-outlined animate-bounce">expand_more</span>
+                    Load_More_Data
+                </span>
+</button>
+</div>
+</div>
+</body></html>
