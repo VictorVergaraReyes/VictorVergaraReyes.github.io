@@ -133,7 +133,7 @@ body {
 }
 
 /* Scrollbar personalizada */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 8px;
 }
 
@@ -148,4 +148,18 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #D900FF;
-}
+} */
+
+ ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #120816; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b90df2; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d946ef; 
+        }

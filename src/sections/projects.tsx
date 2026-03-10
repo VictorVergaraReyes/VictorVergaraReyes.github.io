@@ -1,5 +1,5 @@
-import { ExternalLink, Monitor, Smartphone, DollarSign } from 'lucide-react';
 import { useState } from 'react';
+import CyberpunkProjectCard from '../components/CyberpunkProjectCard';
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -9,35 +9,33 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Glow app",
-      description: "A managment mobile app for schedule in beauty salons",
+      title: "GLOW_APP",
+      description: "A management mobile app for schedule in beauty salons with real-time booking system.",
       category: "Mobile Apps",
-      image: "Smartphone",
+      imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCIgEPfwgTeESCSy05TbZL9TrIVUY0rpZn5onIWLBOC9g6rqKZe1-cuZkBXUu2ZPDWiCcOGa14nvTCWrndpELyfb-hUI-PxskhQnxYx74Tro3AFcmzDzHsaHvLeNVSquo6Io3q8WPz3ndncAbk6C7jMZoFFD0SLhV-ceIxypJqZikwXH_x-XYBYg-R6Gg96Jxv-a0hois-_CgHB7rh-UbLDMy_VcFDC_2j3xLBkOWIPXL4dmupPi5UBN_bWr2VzaUVkxblRb3NeU-E",
+      imageAlt: "Mobile app interface with neon aesthetic",
+      version: "VER. 2.0",
+      categoryIcon: "smartphone",
+      categoryLabel: "MOBILE_APPS",
       technologies: ["React Native", "Supabase", "Stripe"],
-      gradient: "from-orange-200 to-pink-200"
     },
     {
       id: 2,
-      title: "Barrel Sauna Website",
-      description: "A responsive website for a barrel sauna business, featuring product showcases, booking system, and customer testimonials.",
+      title: "BARREL_SAUNA",
+      description: "A responsive website for a barrel sauna business, featuring product showcases and booking system.",
       category: "Web Development",
-      image: "social",
+      imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAsLqR5dMyA7LKgAr4fFCkbG3-AlDEaDA9JmapDLixE7KZlE5CDcUVS9m01rup1zkNM-Hmo4ndiLfbwQ_EAWfbg8WzFiMeQohXHxj4yHA7w-Cs0a2a7u7lQhXVo3zdhAtgp0JdiVIGpppUxPfTsy3ug5ik-oQgfiGhWtEzCw2gdQbB7ngU-ZC6-YuBhantUqpHC9xlxsZ3eqmskSkWLkGCAETV-kY7Bi1gyEqCg7QDRcwbA3vdy81ViEtv1WpLDRVp9tbKoDgtAlnw",
+      imageAlt: "Responsive website with modern design",
+      version: "LIVE",
+      categoryIcon: "public",
+      categoryLabel: "WEB_DEVELOPMENT",
       technologies: ["Astro"],
-      gradient: "from-blue-200 to-cyan-200"
     },
   ];
 
   const filteredProjects = activeFilter === 'All'
     ? projects
     : projects.filter(project => project.category === activeFilter);
-
-  const getProjectIcon = (category: any) => {
-    switch (category) {
-      case 'Web Development': return <Monitor className="w-16 h-16 text-gray-400" />;
-      case 'Mobile Apps': return <Smartphone className="w-16 h-16 text-gray-400" />;
-      default: return <DollarSign className="w-16 h-16 text-gray-400" />;
-    }
-  };
 
   return (
     <section id="projects" className="py-20 relative z-10">
@@ -66,52 +64,19 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
-            <div
+            <CyberpunkProjectCard
               key={project.id}
-              className="max-w-sm group glass-panel rounded-lg overflow-hidden hover:shadow-[0_0_25px_rgba(217,0,255,0.2)] transition-all duration-500 transform hover:-translate-y-2 border border-primary/20"
-            >
-              {/* Project Image Placeholder */}
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
-                <div className="relative z-10 p-4 bg-black/40 backdrop-blur-sm rounded-full border border-white/20">
-                  {getProjectIcon(project.category)}
-                </div>
-
-                {/* Overlay with actions */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4 backdrop-blur-[2px]">
-                  <button className="p-3 border border-secondary text-secondary hover:bg-secondary hover:text-black transition-all rounded-none clip-path-slant">
-                    <ExternalLink className="w-5 h-5" />
-                  </button>
-                </div>
-
-                {/* Glitch overlay line */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-secondary/50 transform -translate-y-full group-hover:animate-scanline"></div>
-              </div>
-
-              {/* Project Info */}
-              <div className="p-6 relative">
-                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-                <h3 className="text-2xl font-display font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4 font-body border-l-2 border-secondary/30 pl-3">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-2 py-1 bg-surface-dark border border-primary/30 text-primary text-xs font-mono rounded-none"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+              imageUrl={project.imageUrl}
+              imageAlt={project.imageAlt}
+              version={project.version}
+              category={project.categoryLabel}
+              categoryIcon={project.categoryIcon}
+              title={project.title}
+              description={project.description}
+              tags={project.technologies}
+            />
           ))}
         </div>
 
