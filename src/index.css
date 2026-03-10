@@ -1,14 +1,9 @@
 @import "tailwindcss";
 /* Estilos globales para los componentes cyberpunk */
 
-/* Configuración de fondo para modo oscuro */
+/* Fondo modo dark */
 body {
-  background-color: #f3f4f6; /* background-light */
-  transition: background-color 0.3s ease;
-}
-
-.dark body {
-  background-color: #050014; /* background-dark */
+  background-color: #050014;
 }
 
 .text-shadow-neon {

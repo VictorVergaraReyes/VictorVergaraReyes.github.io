@@ -1,8 +1,7 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, type ReactNode } from 'react';
 
 interface DarkModeContextType {
   isDark: boolean;
-  toggleDarkMode: () => void;
 }
 
 const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined);
@@ -12,35 +11,12 @@ interface DarkModeProviderProps {
 }
 
 export const DarkModeProvider = ({ children }: DarkModeProviderProps) => {
-  // Inicializar con la preferencia guardada o la del sistema
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    const saved = localStorage.getItem('darkMode');
-    if (saved !== null) {
-      return saved === 'true';
-    }
-    // Si no hay preferencia guardada, usar la del sistema
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  });
-
   useEffect(() => {
-    const root = document.documentElement;
-
-    if (isDark) {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-
-    // Guardar preferencia en localStorage
-    localStorage.setItem('darkMode', isDark.toString());
-  }, [isDark]);
-
-  const toggleDarkMode = () => {
-    setIsDark(prev => !prev);
-  };
+    document.documentElement.classList.add('dark');
+  }, []);
 
   return (
-    <DarkModeContext.Provider value={{ isDark, toggleDarkMode }}>
+    <DarkModeContext.Provider value={{ isDark: true }}>
       {children}
     </DarkModeContext.Provider>
   );

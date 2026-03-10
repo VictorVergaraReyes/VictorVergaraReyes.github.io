@@ -1,8 +1,6 @@
-import { useDarkMode } from "../context/DarkModeContext";
 import CyberpunkHero from "./Cyberpunkhero";
 
 const HeroSection = () => {
-  const { isDark } = useDarkMode();
 
   return (
     <main className="relative min-h-screen flex items-center pt-24 px-6 md:px-12 lg:px-20 overflow-hidden">
